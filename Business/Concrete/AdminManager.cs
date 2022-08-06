@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,19 @@ namespace Business.Concrete
         public List<Admin> GetAll()
         {
            return _adminDal.GetAll();
+        }
+        public List<Admin> GetFull()
+        {
+
+            return _adminDal.GetAll(include: (x => x.Include(x => x.User)));
+
+        }
+
+        public List<Admin> GetFullById(int id)
+        {
+
+            return _adminDal.GetAll(filter: (x => (x.Id== id)),include: (x => x.Include(x => x.User)));
+
         }
 
         public Admin GetById(int id)

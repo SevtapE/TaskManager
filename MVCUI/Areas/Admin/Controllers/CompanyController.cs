@@ -58,8 +58,8 @@ namespace MVCUI.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetCompanyEmployees(int id)
         {
-            var companyEmployees = _companyService.GetWithEmployees(id);
-            return PartialView(companyEmployees);
+            ViewBag.Id = id;
+            return RedirectToAction("Index");
         }
 
 

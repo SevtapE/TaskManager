@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,12 @@ namespace Business.Concrete
         public List<Manager> GetAll()
         {
            return _managerDal.GetAll();
+        }
+        public List<Manager> GetFull()
+        {
+
+            return _managerDal.GetAll(include: (x => x.Include(x => x.User).Include(x=>x.Company)));
+
         }
         public List<Manager> GetAllByCompany(int id)
         {

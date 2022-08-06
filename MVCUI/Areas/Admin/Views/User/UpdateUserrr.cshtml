@@ -1,12 +1,6 @@
 ﻿@using Core.Core.Security.Dtos
 @model UserForUpdateDto
 
-@{
-    ViewData["Title"] = "UpdateUser";
-    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
-}
-
-
 <div class="col-sm-12">
     @using (Html.BeginForm("UpdateUser", "User", FormMethod.Post))
     {
@@ -44,4 +38,3 @@
         </div>
     }
 </div>
-

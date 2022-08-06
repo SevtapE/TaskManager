@@ -11,6 +11,7 @@ namespace Business.Abstract
     {
         Employee GetById(int id);
         List<Employee> GetAll();
+        List<Employee> GetFullByCompany(int id);
         void Add(Employee entity);
         void Update(Employee entity);
         void Delete(Employee entity);

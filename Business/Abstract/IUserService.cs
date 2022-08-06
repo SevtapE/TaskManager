@@ -13,10 +13,13 @@ namespace Business.Abstract
     {
         User GetById(int id);
         List<User> GetAll();
+        List<User> GetAllActive();
         User GetByMail(string email);
         List<OperationClaim> GetClaims(User user);
         void Add(User entity);
         void Update(UserForUpdateDto userForUpdateDto);
+
+        //change the status false
         void Delete(User entity);
 
     }

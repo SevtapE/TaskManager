@@ -39,6 +39,11 @@ namespace Business.Concrete
            return _userDal.GetAll();
         }
 
+        public List<User> GetAllActive()
+        {
+
+            return _userDal.GetAll(x=>x.Status==true);
+        }
         public User GetById(int id)
         {
             return _userDal.Get(x=>x.Id == id);

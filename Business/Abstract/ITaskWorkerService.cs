@@ -11,6 +11,17 @@ namespace Business.Abstract
     {
         TaskWorker GetById(int id);
         List<TaskWorker> GetAll();
+        List<TaskWorker> GetFull();
+        List<TaskWorker> GetFullByWorkerUserId(int userId);
+
+        List<TaskWorker> GetFullByWorkerUserIdDo(int userId); //Urgent && Important
+        List<TaskWorker> GetFullByWorkerUserIdSchedule(int userId);
+        List<TaskWorker> GetFullByWorkerUserIdLater(int userId);
+        List<TaskWorker> GetFullByWorkerUserIdDelegate(int userId);
+
+
+
+
         void Add(TaskWorker entity);
         void Update(TaskWorker entity);
         void Delete(TaskWorker entity);

@@ -11,6 +11,7 @@ namespace Business.Abstract
     {
         Manager GetById(int id);
         List<Manager> GetAll();
+        List<Manager> GetFull();
         List<Manager> GetAllByCompany(int id);
         void Add(Manager entity);
         void Update(Manager entity);

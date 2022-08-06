@@ -31,6 +31,8 @@ namespace Core.Core.DataAccess.Concrete.EntityFramework
             return  queryable.ToList();
 
         }
+
+
         public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
             return  Context.Set<TEntity>().FirstOrDefault(filter);

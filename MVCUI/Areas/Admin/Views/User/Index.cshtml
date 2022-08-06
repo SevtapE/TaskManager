@@ -1,5 +1,5 @@
-﻿@using Core.Core.Security.Entities
-@model List<User>
+﻿
+@model List<Core.Core.Security.Entities.User>
 @{
     ViewData["Title"] = "Index";
      Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
@@ -34,8 +34,8 @@
                         <td>@item.Email</td>
                         <td>@item.Status</td>
 
-                        <td><a href="/User/DeleteUser/@item.Id" class="btn btn-danger">Delete</a> </td>
-                        <td><a href="/User/UpdateUser/@item.Id" class="btn btn-warning">Update</a> </td>
+                        <td><a href="/Admin/User/DeleteUser/@item.Id" class="btn btn-danger">Delete</a> </td>
+                        <td><a href="/Admin/User/UpdateUser/@item.Id" class="btn btn-warning">Update</a> </td>
 
 
                     </tr>
@@ -45,6 +45,6 @@
         </table>
 
     </section>
-    <a href="/User/AddUser/" class="btn btn-success">Add New</a>
+    <a href="/Admin/User/AddUser/" class="btn btn-success">Add New</a>
 </div>
 

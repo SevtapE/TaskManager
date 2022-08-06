@@ -37,14 +37,15 @@ namespace MVCUI.Areas.Admin.Controllers
         public IActionResult UpdateUser(int id)
         {
            var userToEdit = _useryService.GetById(id);
-          
-            return View(userToEdit);
+            UserForUpdateDto userForUpdateDto = new UserForUpdateDto();
+            userForUpdateDto.User=userToEdit;
+            return View(userForUpdateDto);
         }
         [HttpPost]
-        public PartialViewResult UpdateUser(UserForUpdateDto userForUpdateDto)
+        public IActionResult UpdateUser(UserForUpdateDto userForUpdateDto)
         {
              _useryService.Update(userForUpdateDto);
-            return PartialView();
+            return RedirectToAction("Index");
         }
         [HttpGet]
         public IActionResult DeleteUser(int id)

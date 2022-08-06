@@ -11,6 +11,8 @@ namespace Business.Abstract
     {
         Admin GetById(int id);
         List<Admin> GetAll();
+        List<Admin> GetFull();
+        List<Admin> GetFullById(int id);
         void Add(Admin entity);
         void Update(Admin entity);
         void Delete(Admin entity);

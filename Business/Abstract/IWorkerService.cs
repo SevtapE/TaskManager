@@ -11,7 +11,7 @@ namespace Business.Abstract
     {
         Worker GetById(int id);
         List<Worker> GetAll();
-        List<Worker> GetAllWithFullDetails();
+        List<Worker> GetFull();
         void Add(Worker entity);
         void Update(Worker entity);
         void Delete(Worker entity);

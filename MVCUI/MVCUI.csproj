@@ -35,7 +35,6 @@
     <Folder Include="Areas\Manager\Controllers\" />
     <Folder Include="Areas\Manager\Data\" />
     <Folder Include="Areas\Manager\Models\" />
-    <Folder Include="Areas\Worker\Controllers\" />
     <Folder Include="Areas\Worker\Data\" />
     <Folder Include="Areas\Worker\Models\" />
   </ItemGroup>

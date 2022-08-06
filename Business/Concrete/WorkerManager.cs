@@ -34,9 +34,9 @@ namespace Business.Concrete
            return _workerDal.GetAll();
         }
 
-        public List<Worker> GetAllWithFullDetails()
+        public List<Worker> GetFull()
         {
-            return _workerDal.GetAll(include: (x => x.Include(x => x.Manager).Include(m => m.Company)));
+            return _workerDal.GetAll(include: (x => x.Include(x => x.Manager).Include(m => m.Company).Include(x=>x.User).Include(m=>m.Manager.User)));
         }
 
         public Worker GetById(int id)

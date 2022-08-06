@@ -1,0 +1,56 @@
+﻿@using Entities.Concrete
+@model List<TaskWorker>
+
+            <header class="panel-heading">
+                --- Later ---
+            </header>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Content</th>
+
+                        <th>StartDate</th>
+                        <th>EndDate</th>
+                        <th>Deadline</th>
+
+                        <th>Creator</th>
+                        <th></th>
+                      
+                    </tr>
+
+
+
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>@item.Task.Id</th>
+                            <td>@item.Task.Title</td>
+                            <td>@item.Task.Content</td>
+
+
+                            <td> @(((DateTime)item.Task.StartDate).ToString("dd-MMM-YYYY"))</td>
+                            <td> @(((DateTime)item.Task.EndDate).ToString("dd-MMM-YYYY"))</td>
+                            <td> @(((DateTime)item.Task.Deadline).ToString("dd-MMM-YYYY"))</td>
+
+
+
+                            <td>@item.Worker.User.FirstName + " " +@item.Worker.User.LastName</td>
+                           
+
+
+                            
+                            <td>
+                                <a href="/TaskWorker/TaskDetails/@item.Id" class="btn btn-primary">Details</a>
+                            </td>
+
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
