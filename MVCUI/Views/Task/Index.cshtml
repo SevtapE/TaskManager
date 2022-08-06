@@ -1,0 +1,82 @@
+﻿@using Entities.Concrete
+@model List<Entities.Concrete.Task>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-sm-12">
+    <section class="panel">
+        <header class="panel-heading no-border ">
+            <strong>Tasks</strong>
+        </header>
+        <br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Content</th>
+
+                    <th>Urgent</th>
+                    <th>Important</th>
+
+                    <th>StartDate</th>
+                    <th>EndDate</th>
+                    <th>Deadline</th>
+
+                    <th>Task State</th>
+
+                    <th>Creator</th>
+                    <th>CreationDate</th>
+                    <th>Company</th>
+
+                      <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+
+
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th>@item.Id</th>
+                        <td>@item.Title</td>
+                        <td>@item.Content</td>
+
+                        <td>@item.Urgent</td>
+                        <td>@item.Important</td>
+
+                        <td> @(((DateTime)item.StartDate).ToString("dd-MMM-YYYY"))</td>
+                        <td> @(((DateTime)item.EndDate).ToString("dd-MMM-YYYY"))</td>
+                        <td> @(((DateTime)item.Deadline).ToString("dd-MMM-YYYY"))</td>
+
+
+                        <td>@item.TaskState</td>
+
+                        <td>@item.Person.User.FirstName + " " +@item.Person.User.LastName</td>
+                        <td> @(((DateTime)item.CreationDate).ToString("dd-MMM-YYYY"))</td>
+                        <td>@item.Company.CompanyName</td>
+
+
+                        <td><a href="/Task/DeleteTask/@item.Id" class="btn btn-danger">Delete</a> </td>
+                        <td><a href="/Task/UpdateTask/@item.Id" class="btn btn-warning">Update</a> </td>
+                        <td>
+                            <a href="/Task/TaskDetails/@item.Id" class="btn btn-primary">Details</a>
+                        </td>
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+
+    </section>
+    <a href="/Task/AddTask/" class="btn btn-success">Add New</a>
+</div>
+
